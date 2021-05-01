@@ -1,0 +1,30 @@
+  <h1>{{ tituloPaginaDeContato }}</h1>
+
+  <p> {{ descricaoPaginaDeContato }}</p>
+
+  <hr>
+  
+  <p>Digite um e-mail:</p>
+
+  <div class="input-group mb-3">
+    <input 
+      type="text" 
+      class="form-control" 
+      placeholder="Seu e-mail" 
+      aria-label="Seu e-mail" 
+      aria-describedby="basic-addon2"
+      [(ngModel)]="contatoDigitado">
+    <div class="input-group-append">
+      <span class="input-group-text" id="basic-addon2">{{dominio}}</span>
+    </div>
+  </div>
+  <p *ngIf="contatoDigitado"> {{ contatoDigitado }}{{dominio}}</p>
+  <button class="btn btn-primary btn-lg margin"
+  (click)="onAdicionarEmail()">Adicionar e-mail</button>
+
+  <div class="col margin" *ngIf="listaDeContatos.length">
+    <p> Lista de contatos </p>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item" *ngFor="let contatoDigitado of listaDeContatos">{{ contatoDigitado }}</li>
+      </ol>
+  </div>

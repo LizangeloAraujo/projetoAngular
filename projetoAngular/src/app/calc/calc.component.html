@@ -1,0 +1,39 @@
+    <h1>{{ titulo }}</h1>
+
+    <p>{{ descricao }}</p>
+
+    <hr>
+
+    <div class="input-group">
+        <input type="number" class="form-control small" placeholder="Insira um valor"
+        [(ngModel)]='valor1'>
+
+        <button class="btn btn-outline-secondary" type="button" id="btn-somar"       (click)="getOperador('+')" value="+">+</button>
+        <button class="btn btn-outline-secondary" type="button" id="btn-subtrair"    (click)="getOperador('-')"value="-">-</button>
+        <button class="btn btn-outline-secondary" type="button" id="btn-dividir"     (click)="getOperador('/')"value="/">/</button>
+        <button class="btn btn-outline-secondary" type="button" id="brn-multiplicar" (click)="getOperador('*')"value="*">X</button>
+
+        <input type="number" class="form-control" placeholder="Insira outro valor"
+        [(ngModel)]='valor2'>        
+
+        <button type="submit" class="btn btn-primary" (click)="calcular()">CALCULAR</button>
+
+        <input type="number" class="form-control" disabled placeholder="{{resultado}}">
+    </div>
+    <div class="input-group">
+        <button type="submit" class="btn btn-danger btn-sm" (click)="limparValores()">DELETAR VALORES</button>
+    </div>
+    <hr>
+    <p *ngIf="valor1 || operador || valor2"> {{ valor1 }} {{operador}} {{ valor2 }} = {{ resultado }}</p>
+    <hr>
+
+    <div class="col margin" *ngIf="contas.length">
+        <p> REGISTRO DE CALCULOS </p>
+        <ol class="list-group">
+            <li class="list-group-item" *ngFor="let conta of contas">{{ conta }}</li>
+        </ol>
+    </div>
+    
+
+
+

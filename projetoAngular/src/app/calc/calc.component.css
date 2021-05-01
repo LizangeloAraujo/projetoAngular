@@ -1,0 +1,20 @@
+.btn-primary
+{
+  position: relative;  
+  font-style: oblique;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background-color: rgb(228, 72, 15);
+  border-color: chocolate;
+  border-bottom: cadetblue;
+  border-bottom-right-radius: 50;
+}
+
+.btn-danger {  
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background-color: black;
+  border-color: chocolate;
+  border-bottom: cadetblue;
+  border-bottom-right-radius: 50;
+}
